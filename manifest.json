@@ -1,0 +1,8 @@
+{
+  "name": "ii-workflow-bundle",
+  "version": "1.0",
+  "description": "Recipe for installing and configuring IiWorkflowBundle",
+  "config": {
+    "ii-workflow.yaml": "Resources/config/ii-workflow.yaml"
+  }
+}

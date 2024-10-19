@@ -1,0 +1,16 @@
+framework:
+  messenger:
+    transports:
+      message-in:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: InterInvest\Workflow\Core\Serializer\ExternalMessageSerializer
+        options:
+          queue_name: 'message_in_queue'
+          retry_strategy:
+            max_retries: 3
+            delay: 1000  # Temps d'attente en millisecondes avant une nouvelle tentative
+            multiplier: 2  # Facteur multiplicateur pour le délai après chaque tentative
+            max_delay: 30000  # Délai maximal en millisecondes
+
+      routing:
+        InterInvest\Workflow\Core\Handler\EventMessage: messages_in
