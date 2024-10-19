@@ -1,0 +1,5 @@
+/vendor
+/docker
+/compose.yaml
+/.env
+/composer.lock
